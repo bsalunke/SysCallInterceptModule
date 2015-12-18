@@ -9,53 +9,51 @@ Here we used "IOCTL" to send command/data to the kernel module from the user pro
 I have tested this module on following version of Linux kernel.
 * Linux - 2.6.32-358.el6.i686 i686 i686 i386 GNU/Linux
 
-How to build this build?
-Module: This will build the SysCallInterceptModule module on the Linux platform.
-cd Module
+#### How to build this build?<br>
+######Module: This will build the SysCallInterceptModule module on the Linux platform.<br>
+cd Module<br>
 ./compile 
 
-
-
-Client: This will build the client program, that will send command/data to above build module.
-cd Client
+<br><br>
+######Client: This will build the client program, that will send command/data to above build module.<br>
+cd Client<br>
 make
 
+<br><br>
 
-How to Install the Linux kernel module?
-cd Module
-insmod SysCallInterceptModule.ko
-
-
-You can check installed list of modules using:
-lsmod
-
-How to communicate with our installed kernel module?
-cd Client
-./Client
-
-How to Un-install the Linux kernel module?
-rmmod SysCallInterceptModule
-
-Output:
-You can look for the following log messages in /var/log/messages file.
-e.g.
-After loading of module successfully:
-SysCallInterceptModule : We are in kernel space
-
-When miscellaneous character device has been opened:
-SysCallInterceptModule : device has been opened
-
-When any user process invoke "open" system call, look for following statement:
-SysCallInterceptModule : open() system call is invoked form User 
+####How to Install the Linux kernel module?<br>
+cd Module<br>
+insmod SysCallInterceptModule.ko<br>
 
 
-After unloading of module successfully:
-SysCallInterceptModule : Unloading the module from linux
+####You can check installed list of modules using:<br>
+lsmod<br>
 
+####How to communicate with our installed kernel module?<br>
+cd Client<br>
+./Client<br>
 
-When miscellaneous character device has been closed:
-SysCallInterceptModule : device has been opened
+####How to Un-install the Linux kernel module?<br>
+rmmod SysCallInterceptModule<br>
 
+####Output:<br>
+You can look for the following log messages in /var/log/messages file.<br>
+e.g.<br>
+######After loading of module successfully:<br>
+SysCallInterceptModule : We are in kernel space<br>
 
-Disclaimer: This code interacts with the Linux kernel code. It may result into crash of system or loss of your data.
-Use of this code is Users responsibility.
+######When miscellaneous character device has been opened:<br>
+SysCallInterceptModule : device has been opened<br>
+
+######When any user process invoke "open" system call, look for following statement:<br>
+SysCallInterceptModule : open() system call is invoked form User <br>
+
+<br>
+######After unloading of module successfully:<br>
+SysCallInterceptModule : Unloading the module from linux<br>
+<br>
+######When miscellaneous character device has been closed:<br>
+SysCallInterceptModule : device has been opened<br>
+
+<br>
+######Disclaimer: This code interacts with the Linux kernel code. It may result into crash of system or loss of your data. Use of this code is Users responsibility.
