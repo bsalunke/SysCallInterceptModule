@@ -9,7 +9,7 @@ Here we used "IOCTL" to send command/data to the kernel module from the user pro
 I have tested this module on following version of Linux kernel.
 * Linux - 2.6.32-358.el6.i686 i686 i686 i386 GNU/Linux
 
-# How to build this build?
+## How to build this build?
 ###### Module: This will build the SysCallInterceptModule module on the Linux platform.<br>
 cd Module<br>
 ./compile 
@@ -21,7 +21,7 @@ make
 
 <br><br>
 
-###### How to Install the Linux kernel module?<br>
+## How to Install the Linux kernel module?<br>
 cd Module<br>
 insmod SysCallInterceptModule.ko<br>
 
@@ -29,14 +29,14 @@ insmod SysCallInterceptModule.ko<br>
 ###### You can check installed list of modules using:<br>
 lsmod<br>
 
-###### How to communicate with our installed kernel module?<br>
+## How to communicate with our installed kernel module?<br>
 cd Client<br>
 ./Client<br>
 
-###### How to Un-install the Linux kernel module?<br>
+## How to Un-install the Linux kernel module?<br>
 rmmod SysCallInterceptModule<br>
 
-###### Output:<br>
+## Output:<br>
 You can look for the following log messages in /var/log/messages file.<br>
 e.g.<br>
 ###### After loading of module successfully:<br>
